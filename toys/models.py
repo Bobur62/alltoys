@@ -9,10 +9,11 @@ class ActiveObjectsManager(models.Manager):
 
 
 class Address(models.Model):
-    street = models.CharField(max_length=100)    #, help_text="Ko'cha nomi"
+    street = models.CharField(max_length=100)    # help_text="Ko'cha nomi"
     city = models.CharField(max_length=100, null=True, blank=True)
     zip_code = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
+
 
 class User(models.Model):
     is_active = models.BooleanField(default=True)
@@ -33,6 +34,7 @@ class Tag(models.Model):
 
 
 class Toy(models.Model):
+    objects = None
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name="toys", on_delete=models.CASCADE, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

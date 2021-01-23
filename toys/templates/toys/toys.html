@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:toys="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Alltoys - dashboard</title>
+</head>
+<body>
+<div>
+    ALL toys
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td style="width: 100px"><a href="#"> Toys </td>
+            <td style="width: 100px"><a href="#"> Users </a></td>
+        </tr>
+    </table>
+    <hr>
+
+    <table>
+        {% for toy in toys %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ toy.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <table>
+        {% for toy in toys %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ toy.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>
